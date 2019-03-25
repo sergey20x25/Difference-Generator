@@ -1,13 +1,13 @@
 {
-  "name": "sergey20x25-gendiff",
-  "version": "1.0.0",
+  "name": "sergey20x25-gd",
+  "version": "1.0.1",
   "description": "Hexlet project - gendiff. Differences finding util.",
   "scripts": {
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
     "prepublishOnly": "npm run build"
   },
   "bin": {
-    "brain-games": "dist/bin/gendiff.js"
+    "gendiff": "dist/bin/gendiff.js"
   },
   "files": [
     "dist"
