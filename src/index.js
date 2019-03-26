@@ -1,13 +1,13 @@
-import fs from 'fs';
-import _ from 'lodash';
+import { readFileSync } from 'fs';
 import { extname } from 'path';
+import _ from 'lodash';
 import parse from './parsers';
 
 export default (firstFilePath, secondFilePath) => {
   const firstExt = extname(firstFilePath);
   const secondExt = extname(secondFilePath);
-  const firstFileData = parse(firstExt, fs.readFileSync(firstFilePath, 'utf8'));
-  const secondFileData = parse(secondExt, fs.readFileSync(secondFilePath, 'utf8'));
+  const firstFileData = parse(firstExt, readFileSync(firstFilePath, 'utf8'));
+  const secondFileData = parse(secondExt, readFileSync(secondFilePath, 'utf8'));
   const firstKeys = Object.keys(firstFileData);
   const secondKeys = Object.keys(secondFileData);
 

@@ -1,3 +1,4 @@
+import { readFileSync } from 'fs';
 import genDiff from '../src';
 
 const testJsonPath1 = '__tests__/__fixtures__/before.json';
@@ -6,30 +7,9 @@ const testYamlPath1 = '__tests__/__fixtures__/before.yml';
 const testYamlPath2 = '__tests__/__fixtures__/after.yml';
 const testIniPath1 = '__tests__/__fixtures__/before.ini';
 const testIniPath2 = '__tests__/__fixtures__/after.ini';
-const expectedJson = `{
-  + name: sergey20x25
-  - name: sergey20x25-gd
-    version: 1.0.2
-  - description: Hexlet project - gendiff. Differences finding util.
-  + host: hexlet.io
-  + author: sergey20x25
-  + license: ISC
-}`;
-const expectedYml = `{
-    language: node_js
-  - node_js: node
-  + script: make lint
-  - script: make test
-  + plugins: import
-}`;
-const expectedIni = `{
-    host: hexlet.io
-  + timeout: 20
-  - timeout: 50
-  - proxy: 123.234.53.22
-  - follow: false
-  + verbose: true
-}`;
+const expectedJson = readFileSync('__tests__/__fixtures__/expectedJson.txt', 'utf-8');
+const expectedYml = readFileSync('__tests__/__fixtures__/expectedYml.txt', 'utf-8');
+const expectedIni = readFileSync('__tests__/__fixtures__/expectedIni.txt', 'utf-8');
 
 describe('genDiff tests', () => {
   test('json test', () => {

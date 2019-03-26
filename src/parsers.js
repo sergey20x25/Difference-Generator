@@ -8,4 +8,4 @@ const parsers = {
   '.ini': parse,
 };
 
-export default (fileExt, fileData) => parsers[fileExt](fileData);
+export default (fileExt, data) => parsers[fileExt](data);
