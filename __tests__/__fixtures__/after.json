@@ -1,5 +1,7 @@
 {
-  "timeout": 20,
-  "verbose": true,
-  "host": "hexlet.io"
+  "host": "hexlet.io",
+  "author": "sergey20x25",
+  "license": "ISC",
+  "name": "sergey20x25",
+  "version": "1.0.2"
 }

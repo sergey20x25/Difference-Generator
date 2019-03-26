@@ -6,15 +6,18 @@ export default (firstFilePath, secondFilePath) => {
   const secondFileData = JSON.parse(fs.readFileSync(secondFilePath, 'utf8'));
   const firstKeys = Object.keys(firstFileData);
   const secondKeys = Object.keys(secondFileData);
-  const addedKeys = _.difference(secondKeys, firstKeys);
-  const deletedKeys = _.difference(firstKeys, secondKeys);
-  const sameKeys = _.intersection(firstKeys, secondKeys);
 
-  const addedStrings = addedKeys.reduce((acc, key) => [...acc, `  + ${key}: ${secondFileData[key]}`], []);
-  const deletedStrings = deletedKeys.reduce((acc, key) => [...acc, `  - ${key}: ${firstFileData[key]}`], []);
-  const sameKeysStrings = sameKeys.reduce((acc, key) => (firstFileData[key] === secondFileData[key]
-    ? [...acc, `    ${key}: ${firstFileData[key]}`]
-    : [...acc, `  + ${key}: ${secondFileData[key]}`, `  - ${key}: ${firstFileData[key]}`]), []);
-  const diffString = _.concat(sameKeysStrings, deletedStrings, addedStrings).join('\n');
-  return `{\n${diffString}\n}`;
+  const keys = _.union(firstKeys, secondKeys);
+  const mapped = keys.map((key) => {
+    if (firstFileData[key] === secondFileData[key]) {
+      return `    ${key}: ${firstFileData[key]}`;
+    }
+    if (firstKeys.includes(key)) {
+      return secondKeys.includes(key)
+        ? `  + ${key}: ${secondFileData[key]}\n  - ${key}: ${firstFileData[key]}`
+        : `  - ${key}: ${firstFileData[key]}`;
+    }
+    return `  + ${key}: ${secondFileData[key]}`;
+  });
+  return `{\n${mapped.join('\n')}\n}`;
 };
