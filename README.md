@@ -19,6 +19,8 @@ json example:
 [![asciicast](https://asciinema.org/a/236414.svg)](https://asciinema.org/a/236414)
 yaml example:
 [![asciicast](https://asciinema.org/a/236672.svg)](https://asciinema.org/a/236672)
+ini example:
+[![asciicast](https://asciinema.org/a/236687.svg)](https://asciinema.org/a/236687)
 ## Help
 For help type **gendiff -h** in the console:
 ```sh
