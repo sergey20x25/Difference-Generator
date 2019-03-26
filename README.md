@@ -15,7 +15,10 @@ To start type in the console:
 ```sh
 $ gendiff <path_to_file_1> <path_to_file_2>
 ```
+json example:
 [![asciicast](https://asciinema.org/a/236414.svg)](https://asciinema.org/a/236414)
+yaml example:
+[![asciicast](https://asciinema.org/a/236672.svg)](https://asciinema.org/a/236672)
 ## Help
 For help type **gendiff -h** in the console:
 ```sh

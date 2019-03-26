@@ -1,0 +1,5 @@
+---
+
+plugins: import
+language: node_js
+script: make lint
