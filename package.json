@@ -1,6 +1,6 @@
 {
   "name": "sergey20x25-gd",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Hexlet project - gendiff. Differences finding util.",
   "scripts": {
     "test": "jest",

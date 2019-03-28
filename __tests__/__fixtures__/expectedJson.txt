@@ -1,6 +1,6 @@
 {
-  + name: sergey20x25
   - name: sergey20x25-gd
+  + name: sergey20x25
     version: 1.0.2
   - description: Hexlet project - gendiff. Differences finding util.
   + host: hexlet.io

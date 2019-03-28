@@ -1,27 +1,14 @@
 import { readFileSync } from 'fs';
 import { extname } from 'path';
-import _ from 'lodash';
+import render from './renderer';
 import parse from './parsers';
+import buildAst from './buildast';
 
 export default (firstFilePath, secondFilePath) => {
   const firstExt = extname(firstFilePath);
   const secondExt = extname(secondFilePath);
   const firstFileData = parse(firstExt, readFileSync(firstFilePath, 'utf8'));
   const secondFileData = parse(secondExt, readFileSync(secondFilePath, 'utf8'));
-  const firstKeys = Object.keys(firstFileData);
-  const secondKeys = Object.keys(secondFileData);
-
-  const keys = _.union(firstKeys, secondKeys);
-  const mapped = keys.map((key) => {
-    if (firstFileData[key] === secondFileData[key]) {
-      return `    ${key}: ${firstFileData[key]}`;
-    }
-    if (firstKeys.includes(key)) {
-      return secondKeys.includes(key)
-        ? `  + ${key}: ${secondFileData[key]}\n  - ${key}: ${firstFileData[key]}`
-        : `  - ${key}: ${firstFileData[key]}`;
-    }
-    return `  + ${key}: ${secondFileData[key]}`;
-  });
-  return `{\n${mapped.join('\n')}\n}`;
+  const ast = buildAst(firstFileData, secondFileData);
+  return render(ast);
 };

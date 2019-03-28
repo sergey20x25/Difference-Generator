@@ -21,6 +21,8 @@ yaml example:
 [![asciicast](https://asciinema.org/a/236672.svg)](https://asciinema.org/a/236672)
 ini example:
 [![asciicast](https://asciinema.org/a/236687.svg)](https://asciinema.org/a/236687)
+recursive jsn example:
+[![asciicast](https://asciinema.org/a/237290.svg)](https://asciinema.org/a/237290)
 ## Help
 For help type **gendiff -h** in the console:
 ```sh
