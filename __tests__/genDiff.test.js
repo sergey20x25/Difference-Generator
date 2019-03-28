@@ -16,6 +16,8 @@ const expectedYml = readFileSync('__tests__/__fixtures__/expectedYml.txt', 'utf-
 const expectedIni = readFileSync('__tests__/__fixtures__/expectedIni.txt', 'utf-8');
 const expectedJsonRec = readFileSync('__tests__/__fixtures__/expectedJsonRec.txt', 'utf-8');
 const expectedIniRec = readFileSync('__tests__/__fixtures__/expectedIniRec.txt', 'utf-8');
+const expectedJsonRecPlain = readFileSync('__tests__/__fixtures__/expectedJsonRecPlain.txt', 'utf-8');
+
 
 describe('genDiff tests', () => {
   test('json test', () => {
@@ -36,5 +38,9 @@ describe('genDiff tests', () => {
 
   test('recursive ini test', () => {
     expect(genDiff(testIniRecPath1, testIniRecPath2)).toEqual(expectedIniRec);
+  });
+
+  test('recursive json plain test', () => {
+    expect(genDiff(testJsonRecPath1, testJsonRecPath2, 'plain')).toEqual(expectedJsonRecPlain);
   });
 });

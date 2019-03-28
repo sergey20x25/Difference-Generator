@@ -13,16 +13,35 @@ $ npm install -g sergey20x25-gd
 ## Launch
 To start type in the console:
 ```sh
-$ gendiff <path_to_file_1> <path_to_file_2>
+$ gendiff <path_to_file_1> <path_to_file_2> [options]
 ```
+
+```
+Options:
+  -V, --version        output the version number
+  -f, --format [type]  output format, plain or tree (default: "tree")
+  -h, --help           output usage information
+```
+
 json example:
 [![asciicast](https://asciinema.org/a/236414.svg)](https://asciinema.org/a/236414)
 yaml example:
 [![asciicast](https://asciinema.org/a/236672.svg)](https://asciinema.org/a/236672)
 ini example:
 [![asciicast](https://asciinema.org/a/236687.svg)](https://asciinema.org/a/236687)
-recursive jsn example:
+recursive json example:
 [![asciicast](https://asciinema.org/a/237290.svg)](https://asciinema.org/a/237290)
+plain example:
+[![asciicast](https://asciinema.org/a/237397.svg)](https://asciinema.org/a/237397)
+## API
+```
+var genDiff = require('sergey20x25-gd');
+
+genDiff(pathToFile1, PathToFile2[, format]);
+```
+format:
+* 'tree'
+* 'plain'
 ## Help
 For help type **gendiff -h** in the console:
 ```sh
