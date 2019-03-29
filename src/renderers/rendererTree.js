@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 const addIndentation = n => '    '.repeat(n);
 
 const stringify = (value, level) => {
@@ -22,16 +24,20 @@ const renderTree = (ast) => {
         case 'same':
           return `${addIndentation(level)}    ${key}: ${stringify(value1, level)}`;
         case 'edited':
-          return `${addIndentation(level)}  - ${key}: ${stringify(value1, level)}\n${
-            addIndentation(level)}  + ${key}: ${stringify(value2, level)}`;
-        default:
+          return [
+            `${addIndentation(level)}  - ${key}: ${stringify(value1, level)}`,
+            `${addIndentation(level)}  + ${key}: ${stringify(value2, level)}`,
+          ];
+        case 'parent':
           return `${addIndentation(level)}    ${key}: ${iter(children, level + 1)}\n${
             addIndentation(level + 1)}}`;
+        default:
+          return 'wrong type';
       }
     });
-    return `{\n${mapped.join('\n')}`;
+    return `{\n${_.flatten(mapped).join('\n')}`;
   };
-  return iter(ast, 0);
+  return `${iter(ast, 0)}\n}`;
 };
 
 export default renderTree;

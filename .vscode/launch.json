@@ -8,7 +8,8 @@
       "type": "node",
       "request": "launch",
       "name": "Launch Program",
-      "program": "${workspaceFolder}\\dist\\index.js"
+      "program": "${workspaceFolder}\\dist\\index.js",
+      "args": ["__tests__/__fixtures__/beforeRec.json", "__tests__/__fixtures__/afterRec.json"]
     }
   ]
 }

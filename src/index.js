@@ -1,6 +1,6 @@
 import { readFileSync } from 'fs';
 import { extname } from 'path';
-import render from './renderers/renderers';
+import render from './renderers';
 import parse from './parsers';
 import buildAst from './buildast';
 
