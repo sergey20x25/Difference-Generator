@@ -2,21 +2,21 @@
   {
     "key": "common",
     "type": "parent",
-    "value": [
+    "children": [
       {
         "key": "setting1",
-        "value": "Value 1",
-        "type": "wasn't changed"
+        "value1": "Value 1",
+        "type": "same"
       },
       {
         "key": "setting2",
-        "value": "200",
+        "value1": "200",
         "type": "deleted"
       },
       {
         "key": "setting3",
-        "oldValue": true,
-        "value": {
+        "value1": true,
+        "value2": {
           "key": "value"
         },
         "type": "edited"
@@ -24,32 +24,32 @@
       {
         "key": "setting6",
         "type": "parent",
-        "value": [
+        "children": [
           {
             "key": "key",
-            "value": "value",
-            "type": "wasn't changed"
+            "value1": "value",
+            "type": "same"
           },
           {
             "key": "ops",
-            "value": "vops",
+            "value2": "vops",
             "type": "added"
           }
         ]
       },
       {
         "key": "follow",
-        "value": false,
+        "value2": false,
         "type": "added"
       },
       {
         "key": "setting4",
-        "value": "blah blah",
+        "value2": "blah blah",
         "type": "added"
       },
       {
         "key": "setting5",
-        "value": {
+        "value2": {
           "key5": "value5"
         },
         "type": "added"
@@ -59,38 +59,38 @@
   {
     "key": "group1",
     "type": "parent",
-    "value": [
+    "children": [
       {
         "key": "baz",
-        "oldValue": "bas",
-        "value": "bars",
+        "value1": "bas",
+        "value2": "bars",
         "type": "edited"
       },
       {
         "key": "foo",
-        "value": "bar",
-        "type": "wasn't changed"
+        "value1": "bar",
+        "type": "same"
       },
       {
         "key": "nest",
-        "oldValue": {
+        "value1": {
           "key": "value"
         },
-        "value": "str",
+        "value2": "str",
         "type": "edited"
       }
     ]
   },
   {
     "key": "group2",
-    "value": {
+    "value1": {
       "abc": "12345"
     },
     "type": "deleted"
   },
   {
     "key": "group3",
-    "value": {
+    "value2": {
       "fee": "100500"
     },
     "type": "added"
