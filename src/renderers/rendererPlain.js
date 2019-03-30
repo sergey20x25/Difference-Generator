@@ -23,7 +23,7 @@ const renderPlain = (ast) => {
       case 'parent':
         return iter(children, propertyPath.concat(key, '.'));
       default:
-        return 'wrong type';
+        throw new Error('Wrong type');
     }
   }).join('\n');
   return iter(ast, '');

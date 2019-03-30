@@ -32,7 +32,7 @@ const renderTree = (ast) => {
           return `${addIndentation(level)}    ${key}: ${iter(children, level + 1)}\n${
             addIndentation(level + 1)}}`;
         default:
-          return 'wrong type';
+          throw new Error('Wrong type');
       }
     });
     return `{\n${_.flatten(mapped).join('\n')}`;

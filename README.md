@@ -19,7 +19,7 @@ $ gendiff <path_to_file_1> <path_to_file_2> [options]
 ```
 Options:
   -V, --version        output the version number
-  -f, --format [type]  output format, plain or tree (default: "tree")
+  -f, --format [type]  output format, tree, plain or json (default: "tree")
   -h, --help           output usage information
 ```
 
@@ -31,8 +31,10 @@ ini example:
 [![asciicast](https://asciinema.org/a/236687.svg)](https://asciinema.org/a/236687)
 recursive json example:
 [![asciicast](https://asciinema.org/a/237290.svg)](https://asciinema.org/a/237290)
-plain example:
+plain out example:
 [![asciicast](https://asciinema.org/a/237397.svg)](https://asciinema.org/a/237397)
+json out example:
+[![asciicast](https://asciinema.org/a/237704.svg)](https://asciinema.org/a/237704)
 ## API
 ```
 var genDiff = require('sergey20x25-gd');
@@ -42,6 +44,7 @@ genDiff(pathToFile1, PathToFile2[, format]);
 format:
 * 'tree'
 * 'plain'
+* 'json'
 ## Help
 For help type **gendiff -h** in the console:
 ```sh

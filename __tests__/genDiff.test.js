@@ -42,4 +42,9 @@ describe('genDiff tests', () => {
     const expectedJsonRecPlain = readFileSync('__tests__/__fixtures__/expectedJsonRecPlain.txt', 'utf-8');
     expect(genDiff(testJsonRecPath1, testJsonRecPath2, 'plain')).toEqual(expectedJsonRecPlain);
   });
+
+  test('recursive json json-out test', () => {
+    const expectedJsonRecPlain = readFileSync('__tests__/__fixtures__/expectedJsonRec-JsonOut.txt', 'utf-8');
+    expect(genDiff(testJsonRecPath1, testJsonRecPath2, 'json')).toEqual(expectedJsonRecPlain);
+  });
 });
