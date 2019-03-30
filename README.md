@@ -34,7 +34,8 @@ recursive json example:
 plain out example:
 [![asciicast](https://asciinema.org/a/237397.svg)](https://asciinema.org/a/237397)
 json out example:
-[![asciicast](https://asciinema.org/a/237704.svg)](https://asciinema.org/a/237704)
+[![asciicast](https://asciinema.org/a/237748.svg)](https://asciinema.org/a/237748)
+
 ## API
 ```
 var genDiff = require('sergey20x25-gd');
